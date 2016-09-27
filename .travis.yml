@@ -1,0 +1,8 @@
+language: cpp
+compiler:
+- clang
+- g++
+os:
+- linux
+script:
+g++ program8.7.cpp -o program8.7.out && ./program8.7.out
