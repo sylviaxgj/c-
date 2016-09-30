@@ -5,7 +5,8 @@ compiler:
 before_install:
   - pip install --user cpp-coveralls
 script:
-  -./configure --enable-gcov && make && make check
+  -g++ program3.1.cpp -o program3.1.out 
+  -./program3.1.out --enable-gcov && make && make check
 after_success:
   - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
 
