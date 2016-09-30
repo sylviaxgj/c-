@@ -1,10 +1,18 @@
 
 language: -cpp
-compiler: -g++
-install: pip install coveralls
-script: -g++ program3.1.cpp -o program3.1.cpp &&./program3.1.out
-       - coverage run --source=program3.1.cpp program3.1.out test
+compiler:
+  - gcc
+before_install:
+  - pip install --user cpp-coveralls
+script:
+  -./configure --enable-gcov && make && make check
+after_success:
+  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
 
-service_name: travis-ci
 
-after_success: coveralls
+
+
+
+
+
+
