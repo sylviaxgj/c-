@@ -5,7 +5,7 @@ compiler:
 before_install:
   - pip install --user cpp-coveralls
 script:
-  - g++ –coverage program8.6.cpp -o program8.6.out 
+  - g++ –-coverage program8.6.cpp -o program8.6.out 
   - ./program8.6.out --enable-gcov 
   - gcov program8.6.cpp
 after_success:
